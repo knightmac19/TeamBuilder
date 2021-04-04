@@ -1,0 +1,27 @@
+{
+  "name": "TeamBuilder",
+  "version": "1.0.0",
+  "description": "Use the CLI to build an HTML template with employee cards.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "jest --verbose tests/*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/knightmac19/TeamBuilder.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/knightmac19/TeamBuilder/issues"
+  },
+  "homepage": "https://github.com/knightmac19/TeamBuilder#readme",
+  "dependencies": {
+    "jest": "^26.6.3"
+  }
+}
