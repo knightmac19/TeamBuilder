@@ -14,8 +14,16 @@ body {
     padding-bottom: 30px;
 }
 
-.jumbotron {
+.jumbotron, .bg-manager {
     background: linear-gradient(to bottom, #c8c860, #cfd7df);
+}
+
+.bg-engineer {
+    background: linear-gradient(to bottom, #007bff, #e6f2ff);  
+}
+
+.bg-intern {
+    background: linear-gradient(to bottom, #16943a, #cfd7df);
 }
 
 .fa-github {
