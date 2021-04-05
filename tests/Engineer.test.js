@@ -1,7 +1,7 @@
 const Engineer = require('../lib/Engineer');
 
 test('Can instantiate Engineer instance', () => {
-    const e = new Engineer('Enrique', 5, 'email@email.com', 'knightmac19');
+    const e = new Engineer();
     expect(typeof(e)).toBe("object")
 });
 
