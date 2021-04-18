@@ -31,14 +31,14 @@ const checkNumeric = (num, arr) => {
 
     if (pass) {
         if (arr.includes(num)) {
-            return 'This ID is already assigned. Please choose another one';
+            return 'This value is already assigned. Please choose another one';
         } else if (num.length > 6) {
-            return 'ID\'s cannot be greater than 6 characters';
+            return 'This input cannot be greater than 6 characters';
         } else {
             return true;
         }
     }
-    return 'ID must be a positive number greater than zero';
+    return 'Input must be a positive number greater than zero';
 }
 
 const checkGithub = (str, arr) => {
@@ -107,11 +107,11 @@ const init = () => {
                 validate: a => checkNumeric(a, officeNums)
             }
         ]).then(a => {
-            let manager = new Manager(a.name, a.id, a.email, a.officeNumber);
+            let manager = new Manager(a.name.trim(), a.id.trim(), a.email.trim(), a.officeNumber.trim());
             team.push(manager);
-            usedId.push(a.id);
-            officeNums.push(a.officeNumber);
-            emails.push(a.email);
+            usedId.push(a.id.trim());
+            officeNums.push(a.officeNumber.trim());
+            emails.push(a.email.trim());
             mainMenu();
         })
     };
@@ -142,11 +142,11 @@ const init = () => {
                 validate: a => checkGithub(a, githubs)
             }
         ]).then(a => {
-            let engineer = new Engineer(a.name, a.id, a.email, a.github);
+            let engineer = new Engineer(a.name.trim(), a.id.trim(), a.email.trim(), a.github.trim());
             team.push(engineer);
-            usedId.push(a.id);
-            emails.push(a.email);
-            githubs.push(a.github)
+            usedId.push(a.id.trim());
+            emails.push(a.email.trim());
+            githubs.push(a.github.trim())
             mainMenu();
         })
     };
@@ -176,10 +176,10 @@ const init = () => {
                 message: 'What is the intern\'s school?',
             }
         ]).then(a => {
-            let intern = new Intern(a.name, a.id, a.email, a.school);
+            let intern = new Intern(a.name.trim(), a.id.trim(), a.email.trim(), a.school.trim());
             team.push(intern);
-            usedId.push(a.id);
-            emails.push(a.email);
+            usedId.push(a.id.trim());
+            emails.push(a.email.trim());
             mainMenu();
         })
     };
