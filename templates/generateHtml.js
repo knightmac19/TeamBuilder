@@ -1,18 +1,3 @@
-const managerTemplate = (man) => {
-    return `
-    <div class="card bg-manager mb-2" style="width: 18rem;">
-        <div class="card-header text-center">
-            <h3>${man.name} <i class="fas fa-glasses"></i></h3>
-        </div>
-        <div class="card-body">
-            <h4 class="card-title">Manager</h4>
-            <p class="card-text">ID: ${man.id}</p>
-            <p class="card-text">Email: ${man.email}</p>
-            <p class="card-text">Office Number: ${man.officeNumber}</p>
-        </div>
-    </div>`
-};
-
 const stringifyManagers = (arr, cb) => {
     var team = [];
     var employees = arr.filter(function(obj) {
@@ -52,56 +37,52 @@ const stringifyInterns = (arr, cb) => {
     return team.join('')
 };
 
-const engineerTemplate = (eng) => {
+const managerTemplate = (man) => {
     return `
-    <div class="card bg-engineer mb-2" style="width: 18rem;">
+    <div class="card bg-manager mb-3" style="width: 18rem;">
         <div class="card-header text-center">
-            <h3>Engineer <i class="fas fa-mug-hot"></i></h3>
+            <h3>${man.name} <i class="fas fa-glasses"></i></h3>
         </div>
         <div class="card-body">
-            <h4 class="card-title">${eng.name}</h4>
-            <p class="card-text">ID: ${eng.id}</p>
-            <p class="card-text">Email: ${eng.email}</p>
-            <p class="card-text">Github: ${eng.github}</p>
+            <h4 class="card-title">Manager</h4>
+            <p class="card-text"><strong>ID:</strong> ${man.id}</p>
+            <p class="card-text"><strong>Email:</strong> ${man.email}</p>
+            <p class="card-text"><strong>Office Number:</strong> ${man.officeNumber}</p>
+        </div>
+    </div>`
+};
+
+const engineerTemplate = (eng) => {
+    return `
+    <div class="card bg-engineer mb-3" style="width: 18rem;">
+        <div class="card-header text-center">
+            <h3>${eng.name} <i class="fas fa-mug-hot"></i></h3>
+        </div>
+        <div class="card-body">
+            <h4 class="card-title">Engineer</h4>
+            <p class="card-text"><strong>ID:</strong> ${eng.id}</p>
+            <p class="card-text"><strong>Email:</strong> ${eng.email}</p>
+            <p class="card-text"><strong>Github:</strong> ${eng.github}</p>
         </div>
     </div>`
 };
 
 const internTemplate = (int) => {
     return `
-    <div class="card bg-intern mb-2" style="width: 18rem;">
+    <div class="card bg-intern mb-3" style="width: 18rem;">
         <div class="card-header text-center">
-            <h3>Intern <i class="fas fa-graduation-cap"></i></h3>
+            <h3>${int.name} <i class="fas fa-graduation-cap"></i></h3>
         </div>
         <div class="card-body">
-            <h4 class="card-title">${int.name}</h4>
-            <p class="card-text">ID: ${int.id}</p>
-            <p class="card-text">Email: ${int.email}</p>
-            <p class="card-text">School: ${int.school}</p>
+            <h4 class="card-title">Intern</h4>
+            <p class="card-text"><strong>ID:</strong> ${int.id}</p>
+            <p class="card-text"><strong>Email:</strong> ${int.email}</p>
+            <p class="card-text"><strong>School:</strong> ${int.school}</p>
         </div>
     </div>`
 };
 
 const finalTemplate = (arr) => {
-
-    // var engineers = arr.filter(function(obj) {
-    //     return obj.github;
-    // });
-    // var manArray = [];
-    // var managers = arr.filter(function(obj) {
-    //     return obj.officeNumber;
-    // });
-    
-    // for (var i = 0; i < managers.length; i++) {
-    //     manArray.push(managerTemplate(managers[i]))
-    // }
-
-    // console.log(managers)
-    // console.log(manArray.join(''))
-    
-    // var interns = arr.filter(function(obj) {
-    //     return obj.school;
-    // });
 
     return `
         <!DOCTYPE html>

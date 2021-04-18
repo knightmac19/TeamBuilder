@@ -8,7 +8,7 @@ var fs = require('fs');
 
 
 const exampleArray = [];
-var Natalia = new Manager('Natalia', 00, 'nat@appleseed.com', 001);
+var Natalia = new Manager('Natalia', 001, 'nat@appleseed.com', 001);
 var Mike = new Manager('Mike', 0, 'mike@appleseed.com', 1);
 var John = new Manager('John', 1, 'johnny@appleseed.com', 2);
 
