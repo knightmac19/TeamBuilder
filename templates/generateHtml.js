@@ -62,7 +62,7 @@ const engineerTemplate = (eng) => {
             <h4 class="card-title">Engineer</h4>
             <p class="card-text"><strong>ID:</strong> ${eng.id}</p>
             <p class="card-text"><strong>Email:</strong><a href="mailto:${eng.email}"> ${eng.email}</a></p>
-            <p class="card-text"><strong>Github:</strong><a href="${eng.github}"> ${eng.github}</a></p>
+            <p class="card-text"><strong>Github:</strong><a href="https://github.com/${eng.github}"> ${eng.github}</a></p>
         </div>
     </div>`
 };
