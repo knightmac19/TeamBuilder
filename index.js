@@ -5,8 +5,15 @@ var Intern = require('./lib/Intern');
 var fs = require('fs');
 var inquirer = require('inquirer');
 
+
 let team = [];
 let usedId = [];
+let officeNums = [];
+let emails = [];
+let githubs = [];
+
+console.log(team)
+console.log(usedId)
 
 const checkName = str => {
     let pass = str.match(/[A-Z][A-Za-z]/);
@@ -17,7 +24,24 @@ const checkName = str => {
     return 'Must start with capital letter, & only contain alphabetic characters'
 };
 
+const checkNumeric = (num, arr) => {
+    let pass = num.match(/^[1-9]\d*$/);
 
+    if (pass) {
+        if (arr.includes(num)) {
+            return 'This ID is already assigned. Please choose another one';
+        } else if (num.length > 6) {
+            return 'ID\'s cannot be greater than 6 characters';
+        } else {
+            return true;
+        }
+    }
+    return 'ID must be a positive number greater than zero';
+}
+
+const checkGithub = (str, arr) => {
+
+}
 
 
 
@@ -60,6 +84,7 @@ const init = () => {
                 type: 'input',
                 name: 'id',
                 message: 'What is the manager\'s id?',
+                validate: a => checkNumeric(a, usedId)
             },
             {
                 type: 'input',
@@ -70,11 +95,14 @@ const init = () => {
                 type: 'input',
                 name: 'officeNumber',
                 message: 'What is the manager\'s office number?',
+                validate: a => checkNumeric(a, officeNums)
             }
         ]).then(a => {
             let manager = new Manager(a.name, a.id, a.email, a.officeNumber);
             team.push(manager);
             usedId.push(a.id);
+            officeNums.push(a.officeNumber);
+            emails.push(a.email);
             mainMenu();
         })
     };
@@ -91,6 +119,7 @@ const init = () => {
                 type: 'input',
                 name: 'id',
                 message: 'What is the engineer\'s id?',
+                validate: a => checkNumeric(a, usedId)
             },
             {
                 type: 'input',
@@ -106,6 +135,8 @@ const init = () => {
             let engineer = new Engineer(a.name, a.id, a.email, a.github);
             team.push(engineer);
             usedId.push(a.id);
+            emails.push(a.email);
+            githubs.push(a.github)
             mainMenu();
         })
     };
@@ -122,6 +153,7 @@ const init = () => {
                 type: 'input',
                 name: 'id',
                 message: 'What is the intern\'s id?',
+                validate: a => checkNumeric(a, usedId)
             },
             {
                 type: 'input',
@@ -137,6 +169,7 @@ const init = () => {
             let intern = new Intern(a.name, a.id, a.email, a.school);
             team.push(intern);
             usedId.push(a.id);
+            emails.push(a.email);
             mainMenu();
         })
     };
