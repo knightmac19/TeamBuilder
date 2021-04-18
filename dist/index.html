@@ -1,64 +1,4 @@
-const managerTemplate = (man) => {
-    return `
-    <div class="card bg-manager mb-3" style="width: 18rem;">
-        <div class="card-header text-center">
-            <h3>Manager <i class="fas fa-glasses"></i></h3>
-        </div>
-        <div class="card-body">
-            <h4 class="card-title">${man.name}</h4>
-            <p class="card-text">ID: ${man.id}</p>
-            <p class="card-text">Email: ${man.email}</p>
-            <p class="card-text">Office Number: ${man.officeNumber}</p>
-        </div>
-    </div>`
-};
 
-const engineerTemplate = (eng) => {
-    return `
-    <div class="card bg-engineer mb-3" style="width: 18rem;">
-        <div class="card-header text-center">
-            <h3>Engineer <i class="fas fa-mug-hot"></i></h3>
-        </div>
-        <div class="card-body">
-            <h4 class="card-title">${eng.name}</h4>
-            <p class="card-text">ID: ${eng.id}</p>
-            <p class="card-text">Email: ${eng.email}</p>
-            <p class="card-text">Github: ${eng.github}</p>
-        </div>
-    </div>`
-};
-
-const internTemplate = (int) => {
-    return `
-    <div class="card bg-intern mb-3" style="width: 18rem;">
-        <div class="card-header text-center">
-            <h3>Intern <i class="fas fa-graduation-cap"></i></h3>
-        </div>
-        <div class="card-body">
-            <h4 class="card-title">${int.name}</h4>
-            <p class="card-text">ID: ${int.id}</p>
-            <p class="card-text">Email: ${int.email}</p>
-            <p class="card-text">School: ${int.school}</p>
-        </div>
-    </div>`
-};
-
-const finalTemplate = (arr) => {
-
-    // var engineers = arr.filter(function(obj) {
-    //     return obj.github;
-    // });
-    
-    var managers = arr.filter(function(obj) {
-        return obj.officeNumber;
-    });
-    console.log(managers)
-    
-    // var interns = arr.filter(function(obj) {
-    //     return obj.school;
-    // });
-
-    return `
         <!DOCTYPE html>
         <html lang="en">
         <head>
@@ -93,7 +33,18 @@ const finalTemplate = (arr) => {
 
                     <div id="cards-container" class="container mb-5 ">
                         <div class="row flex-row justify-content-around">
-                            ${managerTemplate(managers[0])}
+                            
+    <div class="card bg-manager mb-3" style="width: 18rem;">
+        <div class="card-header text-center">
+            <h3>Manager <i class="fas fa-glasses"></i></h3>
+        </div>
+        <div class="card-body">
+            <h4 class="card-title">John</h4>
+            <p class="card-text">ID: 1</p>
+            <p class="card-text">Email: johnny@appleseed.com</p>
+            <p class="card-text">Office Number: 2</p>
+        </div>
+    </div>
                         </div>
                         <div class="row flex-row justify-content-around">
                             
@@ -131,7 +82,4 @@ const finalTemplate = (arr) => {
             <script src="./script.js"></script>
         </body>
         </html>
-    `
-};
-
-module.exports = finalTemplate;
+    

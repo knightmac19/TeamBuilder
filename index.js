@@ -26,7 +26,7 @@ var engineers = exampleArray.filter(function(obj) {
     return obj.github;
 });
 
-var manager = exampleArray.filter(function(obj) {
+var managers = exampleArray.filter(function(obj) {
     return obj.officeNumber;
 });
 
@@ -35,17 +35,19 @@ var interns = exampleArray.filter(function(obj) {
 });
 
 // console.log(exampleArray)
-console.log(engineers)
+// console.log(managers)
 
 
-const buildFinalFile = () => {
-    fs.writeFile('./dist/index.html', generate, function(err) {
+
+    fs.writeFile('./dist/index.html', generate(exampleArray), function(err) {
         if (err) {
             console.log(err);
         }
         console.log('please open dist/ folder')
     });
-}
+
+
+// buildFinalFile(exampleArray)
 
 
 
