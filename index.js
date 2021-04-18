@@ -22,9 +22,20 @@ exampleArray.push(Jennifer)
 exampleArray.push(Mark)
 exampleArray.push(Chris)
 
+var engineers = exampleArray.filter(function(obj) {
+    return obj.github;
+});
 
+var manager = exampleArray.filter(function(obj) {
+    return obj.officeNumber;
+});
 
-console.log(exampleArray)
+var interns = exampleArray.filter(function(obj) {
+    return obj.school;
+});
+
+// console.log(exampleArray)
+console.log(engineers)
 
 
 const buildFinalFile = () => {
