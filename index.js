@@ -26,10 +26,10 @@ const init = () => {
                     managerPrompt();
                     break;
                 case 'Engineer':
-                    EngineerPrompt();
+                    engineerPrompt();
                     break;
                 case 'Intern':
-                    InternPrompt();
+                    internPrompt();
                     break;
                 case 'Close & Build Page':
                     buildFinalFile(team);
@@ -62,6 +62,66 @@ const init = () => {
         ]).then(a => {
             let manager = new Manager(a.name, a.id, a.email, a.officeNumber);
             team.push(manager);
+            usedId.push(a.id);
+            mainMenu();
+        })
+    };
+
+    const engineerPrompt = () => {
+        inquirer.prompt([
+            {
+                type: 'input',
+                name: 'name',
+                message: 'What is the engineer\'s name?',
+            },
+            {
+                type: 'input',
+                name: 'id',
+                message: 'What is the engineer\'s id?',
+            },
+            {
+                type: 'input',
+                name: 'email',
+                message: 'What is the engineer\'s email?',
+            },
+            {
+                type: 'input',
+                name: 'github',
+                message: 'What is the engineer\'s github?',
+            }
+        ]).then(a => {
+            let engineer = new Engineer(a.name, a.id, a.email, a.github);
+            team.push(engineer);
+            usedId.push(a.id);
+            mainMenu();
+        })
+    };
+
+    const internPrompt = () => {
+        inquirer.prompt([
+            {
+                type: 'input',
+                name: 'name',
+                message: 'What is the intern\'s name?',
+            },
+            {
+                type: 'input',
+                name: 'id',
+                message: 'What is the intern\'s id?',
+            },
+            {
+                type: 'input',
+                name: 'email',
+                message: 'What is the intern\'s email?',
+            },
+            {
+                type: 'input',
+                name: 'school',
+                message: 'What is the intern\'s school?',
+            }
+        ]).then(a => {
+            let intern = new Intern(a.name, a.id, a.email, a.school);
+            team.push(intern);
             usedId.push(a.id);
             mainMenu();
         })
