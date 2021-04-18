@@ -115,10 +115,10 @@ const init = () => {
                 validate: a => checkNumeric(a, officeNums)
             }
         ]).then(a => {
-            let manager = new Manager(a.name.trim(), a.id.trim(), a.email, a.officeNumber.trim());
+            let manager = new Manager(a.name.trim(), a.id, a.email, a.officeNumber);
             team.push(manager);
-            usedId.push(a.id.trim());
-            officeNums.push(a.officeNumber.trim());
+            usedId.push(a.id);
+            officeNums.push(a.officeNumber);
             emails.push(a.email);
             mainMenu();
         })
@@ -151,9 +151,9 @@ const init = () => {
                 validate: a => checkGithub(a, githubs)
             }
         ]).then(a => {
-            let engineer = new Engineer(a.name.trim(), a.id.trim(), a.email, a.github.trim());
+            let engineer = new Engineer(a.name.trim(), a.id, a.email, a.github.trim());
             team.push(engineer);
-            usedId.push(a.id.trim());
+            usedId.push(a.id);
             emails.push(a.email);
             githubs.push(a.github.trim())
             mainMenu();
@@ -186,9 +186,9 @@ const init = () => {
                 message: 'What is the intern\'s school?',
             }
         ]).then(a => {
-            let intern = new Intern(a.name.trim(), a.id.trim(), a.email, a.school.trim());
+            let intern = new Intern(a.name.trim(), a.id, a.email, a.school.trim());
             team.push(intern);
-            usedId.push(a.id.trim());
+            usedId.push(a.id);
             emails.push(a.email);
             mainMenu();
         })
