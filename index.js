@@ -7,25 +7,85 @@ var inquirer = require('inquirer');
 
 let team = [];
 
-inquirer
-  .prompt([
-    {
+async function main() {
+    const getEmployee = await inquirer.prompt({
         type:'list',
         name:'addEmployee',
         message:'Which type of employee would you like to add?',
-        choices:['Manager', 'Engineer', 'Intern']
-    }
-  ])
-  .then(answers => {
-    console.info('answer: ', answers.addEmployee)
-  })
-  .catch(error => {
-    if(error.isTtyError) {
-      // Prompt couldn't be rendered in the current environment
-    } else {
-      // Something else went wrong
-    }
-  });
+        choices:['Manager', 'Engineer', 'Intern', 'Exit']
+    }).then(a => {
+        switch(a.addEmployee) {
+            case 'Manager':
+            console.log('they chose manager')
+            break;
+            case 'Engineer':
+                console.log('they chose engineer')
+            break;
+            case 'Intern':
+                console.log('they chose intern')
+            break;
+            case 'Exit':
+                console.log('they chose exit')
+                process.exit()
+            
+        }
+    });
+
+    const managerPrompts = await inquirer.prompt({
+        type:'input',
+        name:'name',
+        message:'What is the manager\'s name?'
+    })
+    // const orderList = await getList()
+    // const getOrder = await inquirer.prompt(genList(orderList))
+    // const getConfirm = await inquirer.prompt(confirmUpdate(getOrder.orders))
+
+    // if(getConfirm.toUpdate) {
+    //     console.log('to update', getOrder.orders, 'for account', getAccount.account)
+    // } else {
+    //     console.log('NOT to update', getOrder.orders)
+    // }
+    getEmployee()
+}
+main()
+
+const mainMenu = () => {
+    inquirer
+        .prompt([
+            {
+                type:'list',
+                name:'addEmployee',
+                message:'Which type of employee would you like to add?',
+                choices:['Manager', 'Engineer', 'Intern', 'Exit']
+            }
+        ])
+        .then(a => {
+            switch(a.addEmployee) {
+                case 'Manager':
+                console.log('they chose manager')
+                break;
+                case 'Engineer':
+                    console.log('they chose engineer')
+                break;
+                case 'Intern':
+                    console.log('they chose intern')
+                break;
+            }
+
+
+            // console.info('answer: ', answer.addEmployee)
+        })
+        .catch(error => {
+            if(error.isTtyError) {
+            // Prompt couldn't be rendered in the current environment
+            } else {
+            // Something else went wrong
+            }
+        });
+}
+
+
+
 
 
 
