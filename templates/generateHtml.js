@@ -1,11 +1,11 @@
 const managerTemplate = (man) => {
     return `
-    <div class="card bg-manager mb-3" style="width: 18rem;">
+    <div class="card bg-manager mb-2" style="width: 18rem;">
         <div class="card-header text-center">
-            <h3>Manager <i class="fas fa-glasses"></i></h3>
+            <h3>${man.name} <i class="fas fa-glasses"></i></h3>
         </div>
         <div class="card-body">
-            <h4 class="card-title">${man.name}</h4>
+            <h4 class="card-title">Manager</h4>
             <p class="card-text">ID: ${man.id}</p>
             <p class="card-text">Email: ${man.email}</p>
             <p class="card-text">Office Number: ${man.officeNumber}</p>
@@ -13,9 +13,48 @@ const managerTemplate = (man) => {
     </div>`
 };
 
+const stringifyManagers = (arr, cb) => {
+    var team = [];
+    var employees = arr.filter(function(obj) {
+        return obj.officeNumber;
+    });
+
+    for (var i = 0; i < employees.length; i++) {
+        team.push(cb(employees[i]))
+    };
+
+    return team.join('')
+};
+
+const stringifyEngineers = (arr, cb) => {
+    var team = [];
+    var employees = arr.filter(function(obj) {
+        return obj.github;
+    });
+
+    for (var i = 0; i < employees.length; i++) {
+        team.push(cb(employees[i]))
+    };
+
+    return team.join('')
+};
+
+const stringifyInterns = (arr, cb) => {
+    var team = [];
+    var employees = arr.filter(function(obj) {
+        return obj.school;
+    });
+
+    for (var i = 0; i < employees.length; i++) {
+        team.push(cb(employees[i]))
+    };
+
+    return team.join('')
+};
+
 const engineerTemplate = (eng) => {
     return `
-    <div class="card bg-engineer mb-3" style="width: 18rem;">
+    <div class="card bg-engineer mb-2" style="width: 18rem;">
         <div class="card-header text-center">
             <h3>Engineer <i class="fas fa-mug-hot"></i></h3>
         </div>
@@ -30,7 +69,7 @@ const engineerTemplate = (eng) => {
 
 const internTemplate = (int) => {
     return `
-    <div class="card bg-intern mb-3" style="width: 18rem;">
+    <div class="card bg-intern mb-2" style="width: 18rem;">
         <div class="card-header text-center">
             <h3>Intern <i class="fas fa-graduation-cap"></i></h3>
         </div>
@@ -48,11 +87,17 @@ const finalTemplate = (arr) => {
     // var engineers = arr.filter(function(obj) {
     //     return obj.github;
     // });
+    // var manArray = [];
+    // var managers = arr.filter(function(obj) {
+    //     return obj.officeNumber;
+    // });
     
-    var managers = arr.filter(function(obj) {
-        return obj.officeNumber;
-    });
-    console.log(managers)
+    // for (var i = 0; i < managers.length; i++) {
+    //     manArray.push(managerTemplate(managers[i]))
+    // }
+
+    // console.log(managers)
+    // console.log(manArray.join(''))
     
     // var interns = arr.filter(function(obj) {
     //     return obj.school;
@@ -92,14 +137,16 @@ const finalTemplate = (arr) => {
                     </div>
 
                     <div id="cards-container" class="container mb-5 ">
-                        <div class="row flex-row justify-content-around">
-                            ${managerTemplate(managers[0])}
+                        <div class="row flex-row justify-content-around mb-5">
+                            ${stringifyManagers(arr, managerTemplate)}
                         </div>
-                        <div class="row flex-row justify-content-around">
-                            
+                        <hr>
+                        <div class="row flex-row justify-content-around mb-5">
+                            ${stringifyEngineers(arr, engineerTemplate)}
                         </div>
-                        <div class="row flex-row justify-content-around">
-                            
+                        <hr>
+                        <div class="row flex-row justify-content-around mb-5">
+                            ${stringifyInterns(arr, internTemplate)}
                         </div>
                     </div>
 
