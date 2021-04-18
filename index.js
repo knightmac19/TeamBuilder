@@ -8,6 +8,17 @@ var inquirer = require('inquirer');
 let team = [];
 let usedId = [];
 
+const checkName = str => {
+    let pass = str.match(/[A-Z][A-Za-z]/);
+
+    if (pass) {
+        return true;
+    }
+    return 'Must start with capital letter, & only contain alphabetic characters'
+};
+
+
+
 
 
 const init = () => {
@@ -43,6 +54,7 @@ const init = () => {
                 type: 'input',
                 name: 'name',
                 message: 'What is the manager\'s name?',
+                validate: a => checkName(a)
             },
             {
                 type: 'input',
@@ -73,6 +85,7 @@ const init = () => {
                 type: 'input',
                 name: 'name',
                 message: 'What is the engineer\'s name?',
+                validate: a => checkName(a)
             },
             {
                 type: 'input',
@@ -103,6 +116,7 @@ const init = () => {
                 type: 'input',
                 name: 'name',
                 message: 'What is the intern\'s name?',
+                validate: a => checkName(a)
             },
             {
                 type: 'input',
