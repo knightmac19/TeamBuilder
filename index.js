@@ -5,7 +5,6 @@ var Intern = require('./lib/Intern');
 var fs = require('fs');
 var inquirer = require('inquirer');
 
-
 let team = [];
 let usedId = [];
 let officeNums = [];
@@ -14,6 +13,9 @@ let githubs = [];
 
 console.log(team)
 console.log(usedId)
+console.log(officeNums)
+console.log(emails)
+console.log(githubs)
 
 const checkName = str => {
     let pass = str.match(/[A-Z][A-Za-z]/);
@@ -40,8 +42,15 @@ const checkNumeric = (num, arr) => {
 }
 
 const checkGithub = (str, arr) => {
-
-}
+    if (str.trim() !== "") {
+        if (arr.includes(str)) {
+            return 'This Github is associated with another Engineer';
+        } else {
+            return true;
+        }
+    }
+    return 'Please enter a Github account';
+};
 
 
 
@@ -130,6 +139,7 @@ const init = () => {
                 type: 'input',
                 name: 'github',
                 message: 'What is the engineer\'s github?',
+                validate: a => checkGithub(a, githubs)
             }
         ]).then(a => {
             let engineer = new Engineer(a.name, a.id, a.email, a.github);
