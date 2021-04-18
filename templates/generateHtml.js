@@ -46,7 +46,7 @@ const managerTemplate = (man) => {
         <div class="card-body">
             <h4 class="card-title">Manager</h4>
             <p class="card-text"><strong>ID:</strong> ${man.id}</p>
-            <p class="card-text"><strong>Email:</strong> ${man.email}</p>
+            <p class="card-text"><strong>Email:</strong><a href="mailto:${man.email}"> ${man.email}</a></p>
             <p class="card-text"><strong>Office Number:</strong> ${man.officeNumber}</p>
         </div>
     </div>`
@@ -61,8 +61,8 @@ const engineerTemplate = (eng) => {
         <div class="card-body">
             <h4 class="card-title">Engineer</h4>
             <p class="card-text"><strong>ID:</strong> ${eng.id}</p>
-            <p class="card-text"><strong>Email:</strong> ${eng.email}</p>
-            <p class="card-text"><strong>Github:</strong> ${eng.github}</p>
+            <p class="card-text"><strong>Email:</strong><a href="mailto:${eng.email}"> ${eng.email}</a></p>
+            <p class="card-text"><strong>Github:</strong><a href="${eng.github}"> ${eng.github}</a></p>
         </div>
     </div>`
 };
@@ -76,7 +76,7 @@ const internTemplate = (int) => {
         <div class="card-body">
             <h4 class="card-title">Intern</h4>
             <p class="card-text"><strong>ID:</strong> ${int.id}</p>
-            <p class="card-text"><strong>Email:</strong> ${int.email}</p>
+            <p class="card-text"><strong>Email:</strong><a href="mailto:${int.email}"> ${int.email}</a></p>
             <p class="card-text"><strong>School:</strong> ${int.school}</p>
         </div>
     </div>`
