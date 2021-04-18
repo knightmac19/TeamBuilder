@@ -103,7 +103,7 @@ const finalTemplate = (arr) => {
             <link rel="stylesheet" href="toggle-switchy.css">
 
             <!-- my css -->
-            <link rel="stylesheet" type="text/css" href="../assets/style.css">
+            <link rel="stylesheet" type="text/css" href="./style.css">
 
             <title>Team Builder</title>
         </head>
