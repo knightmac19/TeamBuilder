@@ -7,6 +7,25 @@ var inquirer = require('inquirer');
 
 let team = [];
 
+inquirer
+  .prompt([
+    {
+        type:'list',
+        name:'addEmployee',
+        message:'Which type of employee would you like to add?',
+        choices:['Manager', 'Engineer', 'Intern']
+    }
+  ])
+  .then(answers => {
+    console.info('answer: ', answers.addEmployee)
+  })
+  .catch(error => {
+    if(error.isTtyError) {
+      // Prompt couldn't be rendered in the current environment
+    } else {
+      // Something else went wrong
+    }
+  });
 
 
 
@@ -52,7 +71,7 @@ const buildFinalFile = arr => {
 
 // team = exampleBuild();
     
-buildFinalFile(team)
+// buildFinalFile(team)
 
 
 
