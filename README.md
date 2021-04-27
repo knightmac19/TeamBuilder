@@ -1,6 +1,6 @@
 # TeamBuilder
     
-### NodeJS application to build an html template through the CLI.
+### NodeJS application to build an `HTML` template through the CLI.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)  
 
