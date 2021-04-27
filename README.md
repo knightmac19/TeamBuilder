@@ -23,7 +23,6 @@
 - [Description](#description)
 - [Motivation](#motivation)
 - [Usage](#usage)
-- [Screenshots](#screenshots)
 - [Challenges](#challenges)
 - [Contributors](#contributors)  
 - [License](#license)
