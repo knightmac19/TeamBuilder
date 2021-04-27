@@ -31,11 +31,13 @@
 
 ## <a name="description"></a> Description
 [Contents](#contents)  
-After opening the application users will be prompted for which types of employees they would like to add: `Manager`, `Engineer`, or `Intern`. The application uses JavaScript classes to define these employee object types. 
-
-Users will be prompted several questions -- some general, some particular to an employee class. The application validates all inputs to ensure that users only enter valid emails for the email prompt, numeric characters for id's, etc. 
+After opening the application users will be prompted for which types of employees they would like to add: `Manager`, `Engineer`, or `Intern`. The application uses JavaScript classes to define these employee object types.  
 
 ![jumbotron view](https://github.com/knightmac19/TeamBuilder/blob/main/assets/jumbotron_view.png)  
+
+Users will be prompted several questions -- some general, some particular to an employee class. The application validates all inputs to ensure that users only enter valid emails for the email prompt, numeric characters for id's, etc.  
+
+![validation functions](https://github.com/knightmac19/TeamBuilder/blob/main/assets/validation.png)  
 
 After each prompt cycle the application pushes the `new Engineer`, for example, to a `team` array. After finishing all the prompts the application filters the team array and generates a card for each employee in the array, styled according to their unique class. The application prints the generated file inside the `dist/` folder for export.
 
@@ -60,11 +62,11 @@ Users may clone the applicaton and run it locally with the following steps:
 [Contents](#contents)  
 The application features unit tests run with the `jest` module. Writing those tests was a completely novel experience.
 
-<!-- ![jumbotron view](https://github.com/knightmac19/TeamBuilder/blob/main/assets/full_team.png)   -->
-
-<!-- ![jumbotron view](https://github.com/knightmac19/TeamBuilder/blob/main/assets/full_team.png)   -->
+![unit tests](https://github.com/knightmac19/TeamBuilder/blob/main/assets/tests_code.png)  
 
 Another challenge required learning how to chain multiple inquirer prompt cycles together so that users can continually add members to a team. The application requires no minimum or maximum number of team members and the resulting webpage will be fully responsive no matter the size of the team.
+
+![user prompts](https://github.com/knightmac19/TeamBuilder/blob/main/assets/prompts.png)  
 
 ## <a name="contributors"></a> Contributors
 [Contents](#contents)  
