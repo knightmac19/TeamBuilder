@@ -55,9 +55,6 @@ Users may clone the applicaton and run it locally with the following steps:
 2. `npm i` 
 3. `npm start`
 
-## <a name="screenshots"></a> Screenshots
-[Contents](#contents)  
-
 ## <a name="challenges"></a> Challenges & Lessons Learned
 [Contents](#contents)  
 The application features unit tests run with the `jest` module. Writing those tests was a completely novel experience.
